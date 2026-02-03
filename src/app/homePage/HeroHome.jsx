@@ -24,16 +24,6 @@ const HeroHome = () => {
           Discover the latest movies and TV shows in high quality with a true
           cinematic experience
         </p>
-
-        <div className="mt-8 flex gap-4 pointer-events-auto">
-          <button className="bg-red-600 hover:bg-red-700 transition px-6 py-3 rounded-full font-semibold">
-            Explore Movies
-          </button>
-
-          <button className="border border-red-600 text-red-500 hover:bg-red-600 hover:text-white transition px-6 py-3 rounded-full font-semibold">
-            Watch Trailer
-          </button>
-        </div>
       </div>
 
       {/* Dark Overlay */}
