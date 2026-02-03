@@ -1,17 +1,22 @@
-import LiquidEther from "../../components/ui/LiquidEther";
+import ColorBends from "../../components/ui/ColorBends";
 
 const HeroHome = () => {
   return (
     <section className="relative w-full h-[600px] overflow-hidden bg-black">
       {/* Background Animation */}
-      <LiquidEther
-        colors={["#ff4d4d", "#ff1a1a", "#cc0000"]}
-        color0="#ff4d4d"
-        color1="#ff1a1a"
-        color2="#cc0000"
-        mouseForce={15}
-        autoIntensity={1.6}
-        viscous={25}
+      <ColorBends
+        colors={["#ff0000", "#b30000", "#4d0000"]}
+        rotation={0}
+        speed={0.2}
+        scale={1}
+        frequency={1}
+        warpStrength={1}
+        mouseInfluence={1}
+        parallax={0.5}
+        noise={0.1}
+        transparent
+        autoRotate={0}
+        color="#ff0000"
       />
 
       {/* Overlay */}
