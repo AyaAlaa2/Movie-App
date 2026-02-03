@@ -1,7 +1,8 @@
+import HomePage from "../app/homePage/HomePage";
 const Home = () => {
   return (
     <div>
-      <p>Hello World</p>
+      <HomePage />
     </div>
   );
 };

@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${gamja_flower.variable} ${geistMono.variable} antialiased`}    >
+        className={`${gamja_flower.variable} ${geistMono.variable} antialiased bg-black`}    >
         <Header />
         {children}
       </body>
