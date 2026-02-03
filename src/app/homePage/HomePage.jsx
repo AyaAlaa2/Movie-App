@@ -36,11 +36,11 @@ const HomePage = () => {
         <select
           value={type}
           onChange={(e) => setType(e.target.value)}
-          className="ml-2 bg-red-600 text-white p-2 rounded-lg"
+          className="ml-2 bg-red-600 text-white p-2 rounded-full"
         >
-          <option value="movie">Movie</option>
-          <option value="series">Series</option>
-          <option value="episode">Episode</option>
+          <option className="bg-black transition duration-300  " value="movie">Movie</option>
+          <option className="bg-black transition duration-300 " value="series">Series</option>
+          <option className="bg-black transition duration-300 " value="episode">Episode</option>
         </select>
       </div>
     </>

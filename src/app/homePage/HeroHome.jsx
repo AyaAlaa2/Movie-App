@@ -1,4 +1,5 @@
 import ColorBends from "../../components/ui/ColorBends";
+import GradientText from "../../components/ui/GradientText";
 
 const HeroHome = () => {
   return (
@@ -21,9 +22,14 @@ const HeroHome = () => {
 
       {/* Overlay */}
       <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white pointer-events-none px-4">
-        <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight drop-shadow-2xl">
+        <GradientText
+          colors={["#000000", "#ffffff", "#ec1313"]}
+          animationSpeed={8}
+          showBorder={false}
+          className="custom-class text-5xl md:text-6xl font-extrabold tracking-tight drop-shadow-2xl"
+        >
           Movie App
-        </h1>
+        </GradientText>
 
         <p className="mt-5 max-w-xl text-lg md:text-xl text-gray-300">
           Discover the latest movies and TV shows in high quality with a true
