@@ -3,21 +3,35 @@
 import { useState } from "react";
 import HeroHome from "./HeroHome";
 import SearchSide from "./SearchSide";
-import { fetchAllMovies } from "../../../lib/fetchMovies";
+import { fetchMovies } from "../../../lib/fetchMovies";
+import Products from "./Products";
 
 const HomePage = () => {
   const [keyword, setKeyword] = useState("");
   const [type, setType] = useState("movie");
+  const [resultSearch, setResultSearch] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const handleSearch = async () => {
-    const results = await fetchAllMovies(keyword, type);
-    console.log(results);
+    const results = await fetchMovies(keyword, type);
+    setResultSearch(results);
+    setLoading(false);
   };
 
   return (
     <>
       <HeroHome />
-      <SearchSide keyword={keyword} setKeyword={setKeyword} type={type} setType={setType} handleSearch={handleSearch}/>
+      <SearchSide
+        keyword={keyword}
+        setKeyword={setKeyword}
+        type={type}
+        setType={setType}
+        handleSearch={handleSearch}
+        loading={loading}
+        setLoading={setLoading}
+      />
+
+      {resultSearch && <Products Movies={resultSearch} />}
     </>
   );
 };
