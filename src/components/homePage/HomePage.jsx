@@ -5,6 +5,7 @@ import HeroHome from "./HeroHome";
 import SearchSide from "./SearchSide";
 import { fetchMovies } from "../../../lib/fetchMovies";
 import Products from "./Products";
+import PopularMovies from "./PopularMovies";
 
 const HomePage = () => {
   const [keyword, setKeyword] = useState("");
@@ -31,7 +32,11 @@ const HomePage = () => {
         setLoading={setLoading}
       />
 
-      {resultSearch && <Products Movies={resultSearch} />}
+      {resultSearch && resultSearch.length > 0 ? (
+        <Products Movies={resultSearch} />
+      ) : (
+        <PopularMovies />
+      )}
     </>
   );
 };

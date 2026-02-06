@@ -13,11 +13,17 @@ const Products = ({ Movies }) => {
     <>
       <div className="grid grid-cols-4 gap-5 mx-20 mt-10">
         {Movies.map((movie) => (
-          <Link href={`/${movie.Title}`} key={movie.imdbID}>
+          <Link
+            href={`/${movie.Title ? movie.Title : movie.title}`}
+            key={movie.imdbID || movie.id}
+          >
             <div className="px-4 rounded-lg shadow-2xl shadow-red-600/50 bg-black border-red-600 border-1 overflow-hidden pb-4">
               <Image
-                src={movie.Poster}
-                alt={movie.Title}
+                src={
+                  movie.Poster ||
+                  `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
+                }
+                alt={movie.Title || movie.title}
                 width={100}
                 height={100}
                 className="w-full h-[300px] pt-2 rounded-lg"
@@ -25,10 +31,15 @@ const Products = ({ Movies }) => {
 
               <div className="mt-3">
                 <h2 className="text-white font-semibold text-lg text truncate">
-                  {movie.Title}
+                  {movie.Title || movie.title}
                 </h2>
-                <p className="text-gray-400">Released Year: {movie.Year}</p>
-                <p className="text-gray-400">Type : {movie.Type}</p>
+                <p className="text-gray-400">
+                  Released Year:{" "}
+                  {movie.Year || movie.release_date?.split("-")[0]}
+                </p>
+                {movie.Type && (
+                  <p className="text-gray-400">Type : {movie.Type}</p>
+                )}
               </div>
             </div>
           </Link>

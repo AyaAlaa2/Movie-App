@@ -2,9 +2,27 @@
 import React from "react";
 import { fetchMovies } from "../../../lib/fetchMovies";
 import MoviePage from "../../components/moviePage/MoviePage";
+import NotFound from "../../components/moviePage/NotFound";
 import { fetchMovieDetails } from "@/lib/fetchMovieDetails";
+import { Metadata } from "next";
 
-const page = async ({ params }: { params: Promise<{ MovieID: string }> }) => {
+type Props = {
+  params: Promise<{ MovieID: string }>;
+};
+
+export const generateMetadata: Metadata = async ({
+  params,
+}: {
+  params: Props;
+}): Promise<Metadata> => {
+  const { MovieID } = await params;
+  const movieName: string = MovieID.replaceAll("%20", " ");
+  return {
+    title: `${movieName}`,
+  };
+};
+
+const page = async ({ params }: { params: Props }) => {
   const { MovieID } = await params;
   const movieName: string = MovieID.replaceAll("%20", " ");
   const data = await fetchMovies(movieName, "movie");
@@ -13,8 +31,7 @@ const page = async ({ params }: { params: Promise<{ MovieID: string }> }) => {
       item.Title.toLowerCase() == movieName.toLowerCase(),
   );
   if (!movie) {
-    console.log("Movie not found");
-    return;
+    return <NotFound />;
   }
   const details = await fetchMovieDetails(movie.imdbID);
   return (
