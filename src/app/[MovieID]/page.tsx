@@ -1,8 +1,7 @@
-// 'use client';
 import React from "react";
 import { fetchMovies } from "../../../lib/fetchMovies";
 import MoviePage from "../../components/moviePage/MoviePage";
-import NotFound from "../../components/moviePage/NotFound";
+import NotFound from "./not-found";
 import { fetchMovieDetails } from "@/lib/fetchMovieDetails";
 import { Metadata } from "next";
 
@@ -16,7 +15,8 @@ export const generateMetadata: Metadata = async ({
   params: Props;
 }): Promise<Metadata> => {
   const { MovieID } = await params;
-  const movieName: string = MovieID.replaceAll("%20", " ");
+  const movieTitle = decodeURIComponent(MovieID);
+  const movieName = movieTitle.split("+")[0];
   return {
     title: `${movieName}`,
   };
@@ -24,11 +24,15 @@ export const generateMetadata: Metadata = async ({
 
 const page = async ({ params }: { params: Props }) => {
   const { MovieID } = await params;
-  const movieName: string = MovieID.replaceAll("%20", " ");
-  const data = await fetchMovies(movieName, "movie");
+  const movieTitle = decodeURIComponent(MovieID);
+  const movieName = movieTitle.split("+")[0];
+  const moviedate = movieTitle.split("+")[1];
+  const movieYear = moviedate.split("-")[0].trim();
+  const data = await fetchMovies(movieName, "movie", movieYear);
   const movie = data.find(
     (item: { [key: string]: string }) =>
-      item.Title.toLowerCase() == movieName.toLowerCase(),
+      item.Title.toLowerCase() == movieName.toLowerCase() &&
+      item.Year == movieYear,
   );
   if (!movie) {
     return <NotFound />;
