@@ -77,9 +77,9 @@ const PopularMovies = () => {
         pageCount={totalPages}
         onPageChange={(event) => setPage(event.selected + 1)}
         containerClassName="flex justify-center gap-2 mt-10"
-        pageClassName="px-3 py-1 rounded"
+        pageClassName="px-3 py-1 rounded  hover:text-primary transition duration-300"
         activeClassName="bg-primary text-white rounded-full"
-        className="text-white flex items-center justify-center gap-2 mt-10"
+        className="text-white flex items-center justify-center gap-2 mt-10 cursor-pointer"
       />
     </div>
   );
