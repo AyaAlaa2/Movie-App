@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="fixed w-full bg-black/60 z-[20] px-20 py-3 flex justify-between items-center">
+    <div className="fixed top-0 left-0 w-full bg-black/60 z-[20] px-20 py-3 flex justify-between items-center">
       <Link href="/">
         <Image
           src="/Logo.svg"
