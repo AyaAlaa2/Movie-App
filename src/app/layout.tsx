@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Gamja_Flower } from "next/font/google";
 import "./globals.css";
-import Header from "../components/Header";
-import Link from "next/link";
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
 
 const gamja_flower = Gamja_Flower({
   weight: "400",
@@ -38,6 +38,7 @@ export default function RootLayout({
         className={`${gamja_flower.variable} ${geistMono.variable} antialiased bg-black`}    >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

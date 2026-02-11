@@ -3,7 +3,7 @@ import GradientText from "../ui/GradientText";
 
 const HeroHome = () => {
   return (
-    <section className="relative w-full h-[600px] overflow-hidden bg-black">
+    <section className="relative w-full h-[100vh] overflow-hidden bg-black">
       {/* Background Animation */}
       <ColorBends
         colors={["#ff0000", "#b30000", "#4d0000"]}
