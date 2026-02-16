@@ -28,11 +28,11 @@ const page = async ({ params }: { params: Props }) => {
   const movieName = movieTitle.split("+")[0];
   const moviedate = movieTitle.split("+")[1];
   const movieYear = moviedate.split("-")[0].trim();
-  const data = await fetchMovies(movieName, "movie", movieYear);
-  const movie = data.find(
+  const data = await fetchMovies(movieName, "movie", 1, movieYear);
+  const movie = data.movies.find(
     (item: { [key: string]: string }) =>
       item.Title.toLowerCase() == movieName.toLowerCase() &&
-      item.Year == movieYear,
+      item.Year == movieYear
   );
   if (!movie) {
     return <NotFound />;

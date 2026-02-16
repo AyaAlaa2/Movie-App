@@ -1,4 +1,4 @@
-import { Button } from "../../ui/button";
+import { Button } from "../ui/button";
 
 const SearchSide = ({
   keyword,
@@ -17,7 +17,7 @@ const SearchSide = ({
           placeholder="Search for movies..."
           value={keyword}
           onChange={(e) => setKeyword(e.target.value)}
-          className="border-transparent border focus:outline-0 focus:border-transparent text-white p-2 rounded-lg w-[50vw] text-left"
+          className="border-primary border focus:outline-0 focus:border-primary text-white p-3 rounded-md  w-full text-left"
         />
 
         <div className="flex items-center gap-1">
@@ -27,6 +27,7 @@ const SearchSide = ({
               setLoading(true);
               handleSearch();
             }}
+            className="rounded-md"
           >
             Search
           </Button>
@@ -34,7 +35,7 @@ const SearchSide = ({
           <select
             value={type}
             onChange={(e) => setType(e.target.value)}
-            className="ml-2 bg-red-600 text-white p-2 rounded-full focus:outline-0"
+            className="ml-2 bg-red-600 text-white p-2 rounded-md focus:outline-0 cursor-pointer"
           >
             <option
               className="bg-black transition duration-300  "

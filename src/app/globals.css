@@ -131,3 +131,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+.mySwiper .swiper-pagination-bullet {
+  background: rgba(255,255,255,0.5);
+  width: 8px;
+  height: 8px;
+  align-items: center;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+  background: #e50914;
+  width: 12px;
+  height: 12px;
+}
