@@ -21,17 +21,17 @@ const HeroHome = () => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white pointer-events-none px-4">
+      <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white pointer-events-none px-4 gap-3">
         <GradientText
           colors={["#000000", "#ffffff", "#ec1313"]}
-          className="custom-class text-5xl md:text-6xl font-extrabold tracking-tight drop-shadow-2xl"
+          className="custom-class text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow-2xl"
         >
           Movie App
         </GradientText>
 
-        <p className="mt-5 max-w-xl text-lg md:text-xl text-gray-300">
+        <p className="mt-5 max-w-xl text-lg md:text-xl text-gray-400 font-medium">
           Discover the latest movies and TV shows in high quality with a true
-          cinematic experience
+          cinematic experience.
         </p>
       </div>
 

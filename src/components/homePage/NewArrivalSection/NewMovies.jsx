@@ -16,7 +16,7 @@ const NewMovies = () => {
         fetchData();
     }, []);
     return (
-        <div className="w-full flex flex-col items-start gap-7 my-10 overflow-hidden px-20">
+        <div className="w-full flex flex-col items-start gap-7 my-10 overflow-hidden px-5 md:px-20">
             <HeaderOfSection header="new movies" />
             <SwiperComponent movies={movies} />
         </div>

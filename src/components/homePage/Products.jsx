@@ -10,7 +10,7 @@ const Products = ({ Movies }) => {
     );
   }
   return (
-    <div className="grid grid-cols-4 gap-x-4 gap-y-7 mx-20">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 md:gap-y-7 items-center">
       {Movies.map((movie) => (
         <MoviesCard key={movie.imdbID || movie.id} movie={movie} />
       ))}

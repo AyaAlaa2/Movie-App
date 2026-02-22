@@ -10,8 +10,8 @@ const SearchSide = ({
   setLoading,
 }) => {
   return (
-    <div className="w-full px-20">
-      <form className="flex items-center justify-between gap-10">
+    <div className="w-full">
+      <form className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-10">
         <input
           type="text"
           placeholder="Search for movies..."

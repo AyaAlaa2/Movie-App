@@ -8,7 +8,7 @@ const MoviesCard = ({ movie }) => {
       href={`/${movie.Title ? movie.Title : movie.title}+${movie.Year ? movie.Year : movie.release_date}`}
       key={movie.imdbID || movie.id}
     >
-      <div className="px-4 rounded-lg bg-black overflow-hidden pb-4 group transition duration-300 hover:translate-y-[-5px] hover:shadow-red-400/30 ">
+      <div className="rounded-lg bg-black overflow-hidden pb-4 group transition duration-300 hover:translate-y-[-5px] hover:shadow-red-400/30 ">
         {movie.Poster === "N/A" ? (
           <div className="w-full h-[300px] flex items-center justify-center bg-black">
             <span className="text-primary">No Image Available</span>

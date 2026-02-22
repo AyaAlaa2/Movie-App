@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="w-full flex items-center justify-around py-15 bg-black">
-      <div className="flex flex-col items-start">
+    <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-around py-15 bg-black gap-10 pe-15">
+      <div className="flex flex-col self-center md:items-start">
         <Image
           src="/Logo.svg"
           alt="logo"
@@ -47,7 +47,7 @@ const Footer = () => {
           Home
         </Link>
         <Link
-          href="/"
+          href="/movies"
           className="text-gray-400 text-sm hover:text-primary transition duration-300"
         >
           Films
@@ -59,10 +59,10 @@ const Footer = () => {
           About Us
         </Link>
       </div>
-      <div className="flex flex-col gap-3 ms-10 self-start">
+      <div className="w-full md:w-[30%] flex flex-col gap-5 ms-10 self-start">
         <h3 className="text-white font-semibold">Contact Us</h3>
 
-        <label className="flex items-center justify-between px-2 py-2 border-primary border rounded-lg">
+        <label className="flex items-center justify-between px-2 py-2 border-primary border rounded-lg ">
           <input
             type="text"
             placeholder="Example@gmail.com"
