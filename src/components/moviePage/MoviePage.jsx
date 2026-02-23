@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import getMovies from "../../app/api/moviesAPI";
 import HeaderOfSection from "../homePage/HeaderOfSection";
@@ -28,7 +28,7 @@ const MoviePage = ({ movieDetailes }) => {
         className={`relative w-full min-h-[100vh] flex flex-col md:flex-row gap-5 md:gap-10 px-10 md:px-20 items-center bg-cover bg-center bg-no-repeat mt-20 md:mt-0 pb-8`}
       >
         <div className="absolute top-0 left-0 w-full h-full bg-black/60 backdrop-blur-sm"></div>
-        <div className={`z-3 w-2/4 md:w-1/4 rounded-lg p-2 `}>
+        <div className={`z-3 w-full md:w-2/4 lg:w-1/4 rounded-lg p-2 `}>
           {movie.Poster === "N/A" ? (
             <div className="w-full h-[400px] flex items-center justify-center bg-gray-400">
               <span className="text-primary">No Image Available</span>
@@ -50,7 +50,7 @@ const MoviePage = ({ movieDetailes }) => {
                 alt={movie.Title}
                 width={100}
                 height={100}
-                className="w-full h-[400px] rounded-lg"
+                className="w-full h-[300px] md:h-[400px] rounded-lg"
               />
             </div>
           )}
